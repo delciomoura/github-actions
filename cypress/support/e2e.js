@@ -16,5 +16,11 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+afterEach(function () {
+    if (this.currentTest.state === 'failed') {
+      cy.screenshot();
+    }
+});
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
